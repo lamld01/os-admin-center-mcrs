@@ -4,9 +4,10 @@ import com.lamld.mossellermcrs.factory.thirdPartyApi.ApiClient;
 import com.lamld.mossellermcrs.pojo.User;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
+import vn.mos.core.utils.DateUtil;
 
 @RestController
-@RequestMapping("/feign-test")
+@RequestMapping("v1/public/feign-test")
 @RequiredArgsConstructor
 public class FeignTestController {
 

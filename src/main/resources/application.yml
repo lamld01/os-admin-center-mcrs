@@ -18,3 +18,8 @@ feign:
       default:
         connect-timeout: 3000
         read-timeout: 3000
+
+logging:
+  level:
+    org.springframework.security: DEBUG
+    org.springframework.cloud.openfeign: DEBUG
