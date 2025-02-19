@@ -48,7 +48,7 @@
         <dependency>
             <groupId>vn.mos</groupId>
             <artifactId>core-lib</artifactId>
-            <version>0.0.22</version>
+            <version>0.0.25</version>
         </dependency>
 
     </dependencies>
