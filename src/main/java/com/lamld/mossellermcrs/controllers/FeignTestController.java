@@ -14,16 +14,16 @@ public class FeignTestController {
 
     @GetMapping("/users/{id}")
     public String getUser(@PathVariable String id) {
-        return apiClient.getUserById(id);
+        return apiClient.getUserById(id).getBody();
     }
 
     @PostMapping("/users")
     public String createUser(@RequestBody User user) {
-        return apiClient.createUser(user);
+        return apiClient.createUser(user).getBody();
     }
 
     @DeleteMapping("/users/{id}")
     public String deleteUser(@PathVariable String id) {
-        return apiClient.deleteUser(id);
+        return apiClient.deleteUser(id).getBody();
     }
 }
