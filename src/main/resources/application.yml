@@ -9,8 +9,16 @@ spring:
   jpa:
     database-platform: org.hibernate.dialect.MySQL8Dialect
     hibernate:
-      ddl-auto: none
+      ddl-auto: update
     show-sql: true
+  data:
+    redis:
+      prefix: app
+      host: redis-14343.c1.ap-southeast-1-1.ec2.redns.redis-cloud.com
+      port: 14343
+      username: default
+      password: GEqq94OKKLXP0H22AN8fJjeBFwXqFXGx
+      timeout: 60000
 
 feign:
   client:

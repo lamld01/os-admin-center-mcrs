@@ -1,6 +1,6 @@
-package com.lamld.mossellermcrs.factory.thirdPartyApi;
+package com.lamld.mossellermcrs.domain.factory.thirdPartyApi;
 
-import com.lamld.mossellermcrs.pojo.User;
+import com.lamld.mossellermcrs.domain.pojo.User;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;

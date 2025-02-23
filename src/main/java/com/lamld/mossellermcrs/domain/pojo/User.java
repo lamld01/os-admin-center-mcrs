@@ -1,4 +1,4 @@
-package com.lamld.mossellermcrs.pojo;
+package com.lamld.mossellermcrs.domain.pojo;
 
 public class User {
     private String id;
