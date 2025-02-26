@@ -31,3 +31,9 @@ logging:
   level:
     org.springframework.security: DEBUG
     org.springframework.cloud.openfeign: DEBUG
+
+security:
+  public-routes:
+    - "/v1/seller-center/public/**"
+    - "/swagger-ui/**"
+    - "/v3/api-docs/**"

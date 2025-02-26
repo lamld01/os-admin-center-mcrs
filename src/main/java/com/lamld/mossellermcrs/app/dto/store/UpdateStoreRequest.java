@@ -3,9 +3,7 @@ package com.lamld.mossellermcrs.app.dto.store;
 import lombok.Data;
 
 @Data
-public class CreateStoreRequest {
-
-  private String address;
+public class UpdateStoreRequest {
 
   private String phoneNumber;
 

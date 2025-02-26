@@ -6,10 +6,10 @@ import com.lamld.mossellermcrs.domain.entities.user.WalletEntity;
 import com.lamld.mossellermcrs.domain.repositories.user.WalletEntityRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import vn.mos.core.advice.exceptions.BusinessException;
 import vn.mos.core.base.BaseService;
 import vn.mos.core.base.type.BusinessErrorCode;
 import vn.mos.core.base.type.CurrencyUnit;
-import vn.mos.core.exceptions.BusinessException;
 
 import java.util.List;
 

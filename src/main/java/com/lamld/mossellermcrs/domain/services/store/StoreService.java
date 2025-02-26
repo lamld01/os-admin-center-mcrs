@@ -1,6 +1,7 @@
 package com.lamld.mossellermcrs.domain.services.store;
 
 import com.lamld.mossellermcrs.app.dto.store.CreateStoreRequest;
+import com.lamld.mossellermcrs.app.dto.store.UpdateStoreRequest;
 import com.lamld.mossellermcrs.app.response.store.StoreResponse;
 import com.lamld.mossellermcrs.domain.entities.store.StoreEntity;
 import com.lamld.mossellermcrs.domain.shareService.store.StoreBranchShareService;
@@ -12,7 +13,6 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Isolation;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
-import vn.mos.core.base.type.PageResponse;
 import vn.mos.core.base.type.StoreStatus;
 
 @Service
@@ -36,5 +36,18 @@ public class StoreService extends StoreShareService {
     Long userId = getRequestUserId();
     Page<StoreEntity> stores = getPage(userId, phoneNumber, name, pageable);
     return mapperUtil.mapPage(stores, StoreResponse.class);
+  }
+
+  public StoreResponse updateStore(Long id, UpdateStoreRequest request) {
+    StoreEntity store = getExistStoreById(id);
+    store.setName(request.getName());
+    store.setPhoneNumber(request.getPhoneNumber());
+    store = saveStore(store);
+    return new StoreResponse(store);
+  }
+
+  public StoreResponse getStoreDetail(Long id) {
+    StoreEntity store = getExistStoreById(id);
+    return new StoreResponse(store);
   }
 }

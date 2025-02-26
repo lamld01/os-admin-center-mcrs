@@ -10,7 +10,7 @@ import org.springframework.data.jpa.domain.Specification;
 import org.springframework.stereotype.Service;
 import vn.mos.core.base.BaseService;
 import vn.mos.core.base.type.BusinessErrorCode;
-import vn.mos.core.exceptions.BusinessException;
+import vn.mos.core.advice.exceptions.BusinessException;
 
 import java.util.List;
 
