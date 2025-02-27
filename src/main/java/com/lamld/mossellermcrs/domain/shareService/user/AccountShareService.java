@@ -4,7 +4,7 @@ import com.lamld.mossellermcrs.domain.entities.user.AccountEntity;
 import com.lamld.mossellermcrs.domain.repositories.user.AccountEntityRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import vn.mos.core.advice.exceptions.BusinessException;
+import vn.mos.core.exceptions.BusinessException;
 import vn.mos.core.base.BaseService;
 import vn.mos.core.base.type.BusinessErrorCode;
 

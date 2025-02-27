@@ -24,8 +24,8 @@ public class UserController {
     private final UserService userService;
 
     @GetMapping("/info")
-    public UserResponse getUserInfo() {
-        return userService.getUserInfo();
+    public BaseResponse<UserResponse> getUserInfo() {
+        return BaseResponse.success(userService.getUserInfo());
     }
 
 }

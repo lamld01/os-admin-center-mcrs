@@ -10,6 +10,7 @@ import org.springdoc.core.converters.models.PageableAsQueryParam;
 import org.springframework.data.domain.Pageable;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
+import vn.mos.core.base.BaseResponse;
 import vn.mos.core.base.type.PageResponse;
 
 @RestController
@@ -21,29 +22,28 @@ public class StoreController {
     private final StoreService storeService;
 
     @PostMapping("/create")
-    public StoreResponse createSellerStore(@RequestBody CreateStoreRequest request) {
-        return storeService.createStore(request);
+    public BaseResponse<StoreResponse> createSellerStore(@RequestBody CreateStoreRequest request) {
+        return BaseResponse.success(storeService.createStore(request));
     }
 
     @PutMapping("{id}/update")
-    public StoreResponse updateSellerStore(@PathVariable Long id,
+    public BaseResponse<StoreResponse> updateSellerStore(@PathVariable Long id,
                                            @RequestBody UpdateStoreRequest request) {
-        return storeService.updateStore(id, request);
+        return BaseResponse.success(storeService.updateStore(id, request));
     }
 
 
     @GetMapping("/page")
     @PageableAsQueryParam
-    public PageResponse<StoreResponse> getPageStore(@RequestParam(required = false) String phoneNumber,
+    public BaseResponse<PageResponse<StoreResponse>> getPageStore(@RequestParam(required = false) String phoneNumber,
                                      @RequestParam(required = false) String name,
                                      @Parameter(hidden = true) Pageable pageable) {
-        return PageResponse.fromPage(storeService.getPageStore(phoneNumber, name, pageable));
+        return BaseResponse.success(PageResponse.fromPage(storeService.getPageStore(phoneNumber, name, pageable)));
     }
 
     @GetMapping("/{id}/detail")
-    @PageableAsQueryParam
-    public StoreResponse getStoreDetail(@PathVariable Long id) {
-        return storeService.getStoreDetail(id);
+    public BaseResponse<StoreResponse> getStoreDetail(@PathVariable Long id) {
+        return BaseResponse.success(storeService.getStoreDetail(id));
     }
 
 }

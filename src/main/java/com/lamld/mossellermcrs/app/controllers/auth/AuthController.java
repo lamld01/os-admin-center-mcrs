@@ -7,6 +7,7 @@ import com.lamld.mossellermcrs.domain.services.user.AccountService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import vn.mos.core.base.BaseResponse;
 
 @RestController
 @RequestMapping("/v1/seller-center/public/auth")
@@ -16,12 +17,12 @@ public class AuthController {
     private final AccountService authService;
 
     @PostMapping("/register")
-    public ResponseEntity<AuthResponse> register(@RequestBody RegisterRequest request) {
-        return ResponseEntity.ok(authService.register(request));
+    public BaseResponse<AuthResponse> register(@RequestBody RegisterRequest request) {
+        return BaseResponse.success(authService.register(request));
     }
 
     @PostMapping("/login")
-    public ResponseEntity<AuthResponse> login(@RequestBody AuthRequest request) {
-        return ResponseEntity.ok(authService.authenticate(request));
+    public BaseResponse<AuthResponse> login(@RequestBody AuthRequest request) {
+        return BaseResponse.success(authService.authenticate(request));
     }
 }
