@@ -14,24 +14,12 @@ import vn.mos.core.base.BaseResponse;
 import vn.mos.core.base.type.PageResponse;
 
 @RestController
-@RequestMapping("/v1/seller-center/stores")
+@RequestMapping("/v1/admin-center/stores")
 @RequiredArgsConstructor
-@PreAuthorize("hasRole('SELLER')")
+@PreAuthorize("hasRole('ADMIN')")
 public class StoreController {
 
     private final StoreService storeService;
-
-    @PostMapping("/create")
-    public BaseResponse<StoreResponse> createSellerStore(@RequestBody CreateStoreRequest request) {
-        return BaseResponse.success(storeService.createStore(request));
-    }
-
-    @PutMapping("{id}/update")
-    public BaseResponse<StoreResponse> updateSellerStore(@PathVariable Long id,
-                                           @RequestBody UpdateStoreRequest request) {
-        return BaseResponse.success(storeService.updateStore(id, request));
-    }
-
 
     @GetMapping("/page")
     @PageableAsQueryParam

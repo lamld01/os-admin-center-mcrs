@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.*;
 import vn.mos.core.base.BaseResponse;
 
 @RestController
-@RequestMapping("/v1/seller-center/public/auth")
+@RequestMapping("/v1/admin-center/public/auth")
 @RequiredArgsConstructor
 public class AuthController {
 

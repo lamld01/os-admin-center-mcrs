@@ -1,6 +1,9 @@
+server:
+  port: 8081
+
 spring:
   application:
-    name: mos-seller-mcrs
+    name: mos-admin-portal-mcrs
   datasource:
     url: jdbc:mysql://mysql-32514b67-lambro2510-7aba.h.aivencloud.com:16150/defaultdb?useSSL=true&requireSSL=true
     username: avnadmin
@@ -19,7 +22,6 @@ spring:
       username: default
       password: GEqq94OKKLXP0H22AN8fJjeBFwXqFXGx
       timeout: 60000
-
 feign:
   client:
     config:

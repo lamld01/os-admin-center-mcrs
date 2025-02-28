@@ -15,24 +15,12 @@ import vn.mos.core.base.type.PageResponse;
 import vn.mos.core.base.type.StoreBranchStatus;
 
 @RestController
-@RequestMapping("/v1/seller-center/store-branches")
+@RequestMapping("/v1/admin-center/store-branches")
 @RequiredArgsConstructor
-@PreAuthorize("hasRole('SELLER')")
+@PreAuthorize("hasRole('ADMIN')")
 public class StoreBranchController {
 
   private final StoreBranchService storeBranchService;
-
-  @PostMapping("/create")
-  public BaseResponse<StoreBranchResponse> createSellerStore(@RequestBody CreateStoreBranchRequest request) {
-    return BaseResponse.success(storeBranchService.createStoreBranch(request));
-  }
-
-  @PutMapping("{id}/update")
-  public BaseResponse<StoreBranchResponse> updateSellerStore(@PathVariable Long id,
-                                                             @RequestBody UpdateStoreBranchRequest request) {
-    return BaseResponse.success(storeBranchService.updateStoreBranch(id, request));
-  }
-
 
   @GetMapping("/page")
   @PageableAsQueryParam
