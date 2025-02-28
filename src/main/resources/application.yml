@@ -36,6 +36,6 @@ logging:
 
 security:
   public-routes:
-    - "/v1/seller-center/public/**"
+    - "/v1/admin-center/public/**"
     - "/swagger-ui/**"
     - "/v3/api-docs/**"

@@ -9,10 +9,10 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.lamld</groupId>
-    <artifactId>mos-seller-mcrs</artifactId>
+    <artifactId>os-admin-center-mcrs</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>mos-seller-mcrs</name>
-    <description>mos-seller-mcrs</description>
+    <name>os-admin-center-mcrs</name>
+    <description>os-admin-center-mcrs</description>
     <url/>
     <licenses>
         <license/>
